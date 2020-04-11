@@ -6,6 +6,7 @@ import com.alleluid.tdfmod.items.BioMashIngotItem;
 import com.alleluid.tdfmod.items.ModItems;
 import com.alleluid.tdfmod.setup.ClientProxy;
 import com.alleluid.tdfmod.setup.IProxy;
+import com.alleluid.tdfmod.setup.ModSetup;
 import com.alleluid.tdfmod.setup.ServerProxy;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -32,6 +33,8 @@ import java.util.stream.Collectors;
 @Mod("tdfmod")
 public class TdfMod
 {
+    public static final String MODID = "tdfmod";
+
     // `proxy` will be either server or client side, DistExecutor will execute the correct proxy code for the correct side.
     // https://youtu.be/DgY6kKf5rGU?list=PLmaTwVFUUXiBKYYSyrv_uPPoPZtEsCBVJ&t=1005
     @SuppressWarnings("Convert2MethodRef")
@@ -59,6 +62,9 @@ public class TdfMod
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+
+
+
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -97,7 +103,7 @@ public class TdfMod
 
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
-            itemRegistryEvent.getRegistry().register(new BlockItem(ModBlocks.PRINCIPIC_BLOCK, new Item.Properties()).setRegistryName("principic_block"));
+            itemRegistryEvent.getRegistry().register(new BlockItem(ModBlocks.PRINCIPIC_BLOCK, new Item.Properties().group(ModSetup.ITEM_GROUP)).setRegistryName("principic_block"));
             itemRegistryEvent.getRegistry().register(new BioMashIngotItem());
 
         }
