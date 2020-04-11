@@ -2,6 +2,8 @@ package com.alleluid.tdfmod;
 
 import com.alleluid.tdfmod.blocks.ModBlocks;
 import com.alleluid.tdfmod.blocks.PrincipicBlock;
+import com.alleluid.tdfmod.items.BioMashIngotItem;
+import com.alleluid.tdfmod.items.ModItems;
 import com.alleluid.tdfmod.setup.ClientProxy;
 import com.alleluid.tdfmod.setup.IProxy;
 import com.alleluid.tdfmod.setup.ServerProxy;
@@ -67,7 +69,7 @@ public class TdfMod
     private void enqueueIMC(final InterModEnqueueEvent event)
     {
         // some example code to dispatch IMC to another mod
-        InterModComms.sendTo("tdfmod", "helloworld", () -> { LOGGER.info("Hello world from tdfmod."); return "Hello world";});
+        InterModComms.sendTo("tdfmod", "helloworld", () -> { LOGGER.info("Hello world from tdfmod."); return "Hello world"; });
     }
 
     private void processIMC(final InterModProcessEvent event)
@@ -94,8 +96,10 @@ public class TdfMod
         }
 
         @SubscribeEvent
-        public static void onItemsRegistry(final RegistryEvent.Register<Item> blockRegistryEvent) {
-            blockRegistryEvent.getRegistry().register(new BlockItem(ModBlocks.PRINCIPICBLOCK, new Item.Properties()).setRegistryName("principicblock"));
+        public static void onItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
+            itemRegistryEvent.getRegistry().register(new BlockItem(ModBlocks.PRINCIPICBLOCK, new Item.Properties()).setRegistryName("principicblock"));
+            itemRegistryEvent.getRegistry().register(new BioMashIngotItem());
+
         }
 
     }

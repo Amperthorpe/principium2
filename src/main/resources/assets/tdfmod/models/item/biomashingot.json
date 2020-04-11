@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "tdfmod:item/bio_mash_ingot"
+  }
+}
