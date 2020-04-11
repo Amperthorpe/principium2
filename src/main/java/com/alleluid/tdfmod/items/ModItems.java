@@ -6,4 +6,7 @@ public class ModItems {
 
     @ObjectHolder("tdfmod:biomashingot")
     public static BioMashIngotItem BIOMASHINGOT;
+
+    @ObjectHolder("tdfmod:biomashingot")
+    public static DumpsterRingItem DUMPSTERRING;
 }
