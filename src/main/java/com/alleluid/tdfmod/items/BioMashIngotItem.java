@@ -8,6 +8,6 @@ public class BioMashIngotItem extends Item {
                 .maxStackSize(64)
 
         );
-        setRegistryName("biomashingot");
+        setRegistryName("bio_mash_ingot");
     }
 }

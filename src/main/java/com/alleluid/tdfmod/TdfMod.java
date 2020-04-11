@@ -97,7 +97,7 @@ public class TdfMod
 
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
-            itemRegistryEvent.getRegistry().register(new BlockItem(ModBlocks.PRINCIPICBLOCK, new Item.Properties()).setRegistryName("principicblock"));
+            itemRegistryEvent.getRegistry().register(new BlockItem(ModBlocks.PRINCIPIC_BLOCK, new Item.Properties()).setRegistryName("principic_block"));
             itemRegistryEvent.getRegistry().register(new BioMashIngotItem());
 
         }
