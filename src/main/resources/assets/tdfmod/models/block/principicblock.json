@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "tdfmod:block/principicblock"
+    "all": "tdfmod:block/principic_block"
   }
 }
