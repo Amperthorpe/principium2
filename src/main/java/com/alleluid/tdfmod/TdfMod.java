@@ -2,9 +2,6 @@ package com.alleluid.tdfmod;
 
 import com.alleluid.tdfmod.blocks.ModBlocks;
 import com.alleluid.tdfmod.blocks.PrincipicBlock;
-import com.alleluid.tdfmod.items.BioMashIngotItem;
-import com.alleluid.tdfmod.items.DumpsterRingItem;
-import com.alleluid.tdfmod.items.ModItems;
 import com.alleluid.tdfmod.setup.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -93,24 +90,5 @@ public class TdfMod
     public void onServerStarting(FMLServerStartingEvent event) {
         // do something when the server starts
         LOGGER.info("HELLO from server starting");
-    }
-
-    // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
-    // Event bus for receiving Registry Events)
-    @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
-    public static class RegistryEvents {
-        @SubscribeEvent
-        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
-            blockRegistryEvent.getRegistry().register(new PrincipicBlock());
-        }
-
-        @SubscribeEvent
-        public static void onItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
-            itemRegistryEvent.getRegistry().register(new BlockItem(ModBlocks.PRINCIPIC_BLOCK, new Item.Properties().group(ModSetup.ITEM_GROUP)).setRegistryName("principic_block"));
-//            itemRegistryEvent.getRegistry().register(new BioMashIngotItem());
-
-            itemRegistryEvent.getRegistry().register(new DumpsterRingItem());
-        }
-
     }
 }

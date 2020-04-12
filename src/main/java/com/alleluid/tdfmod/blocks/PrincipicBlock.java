@@ -12,6 +12,5 @@ public class PrincipicBlock extends Block {
         .hardnessAndResistance(1.5f)
         .lightValue(14)
         );
-        setRegistryName("principic_block");
     }
 }

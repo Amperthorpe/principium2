@@ -33,7 +33,6 @@ public class DumpsterRingItem extends Item {
                 .maxStackSize(1)
                 .group(ModSetup.ITEM_GROUP)
         );
-        setRegistryName("dumpster_ring");
     }
     @Override
     public ICapabilityProvider initCapabilities(ItemStack stack, CompoundNBT unused) {
