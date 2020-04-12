@@ -3,6 +3,7 @@ package com.alleluid.tdfmod;
 import com.alleluid.tdfmod.blocks.ModBlocks;
 import com.alleluid.tdfmod.blocks.PrincipicBlock;
 import com.alleluid.tdfmod.items.BioMashIngotItem;
+import com.alleluid.tdfmod.items.DumpsterRingItem;
 import com.alleluid.tdfmod.items.ModItems;
 import com.alleluid.tdfmod.setup.ClientProxy;
 import com.alleluid.tdfmod.setup.IProxy;
@@ -26,6 +27,8 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import top.theillusivec4.curios.api.CuriosAPI;
+import top.theillusivec4.curios.api.imc.CurioIMCMessage;
 
 import java.util.stream.Collectors;
 
@@ -76,6 +79,7 @@ public class TdfMod
     {
         // some example code to dispatch IMC to another mod
         InterModComms.sendTo("tdfmod", "helloworld", () -> { LOGGER.info("Hello world from tdfmod."); return "Hello world"; });
+        InterModComms.sendTo("curios", CuriosAPI.IMC.REGISTER_TYPE, () -> new CurioIMCMessage("ring"));
     }
 
     private void processIMC(final InterModProcessEvent event)
@@ -106,6 +110,7 @@ public class TdfMod
             itemRegistryEvent.getRegistry().register(new BlockItem(ModBlocks.PRINCIPIC_BLOCK, new Item.Properties().group(ModSetup.ITEM_GROUP)).setRegistryName("principic_block"));
             itemRegistryEvent.getRegistry().register(new BioMashIngotItem());
 
+            itemRegistryEvent.getRegistry().register(new DumpsterRingItem());
         }
 
     }
