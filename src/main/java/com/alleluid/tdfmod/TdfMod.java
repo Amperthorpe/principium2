@@ -5,10 +5,7 @@ import com.alleluid.tdfmod.blocks.PrincipicBlock;
 import com.alleluid.tdfmod.items.BioMashIngotItem;
 import com.alleluid.tdfmod.items.DumpsterRingItem;
 import com.alleluid.tdfmod.items.ModItems;
-import com.alleluid.tdfmod.setup.ClientProxy;
-import com.alleluid.tdfmod.setup.IProxy;
-import com.alleluid.tdfmod.setup.ModSetup;
-import com.alleluid.tdfmod.setup.ServerProxy;
+import com.alleluid.tdfmod.setup.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
@@ -58,6 +55,8 @@ public class TdfMod
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        Registration.init();
     }
 
     private void setup(final FMLCommonSetupEvent event)
@@ -108,7 +107,7 @@ public class TdfMod
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
             itemRegistryEvent.getRegistry().register(new BlockItem(ModBlocks.PRINCIPIC_BLOCK, new Item.Properties().group(ModSetup.ITEM_GROUP)).setRegistryName("principic_block"));
-            itemRegistryEvent.getRegistry().register(new BioMashIngotItem());
+//            itemRegistryEvent.getRegistry().register(new BioMashIngotItem());
 
             itemRegistryEvent.getRegistry().register(new DumpsterRingItem());
         }

@@ -9,6 +9,5 @@ public class BioMashIngotItem extends Item {
                 .maxStackSize(64)
                 .group(ModSetup.ITEM_GROUP)
         );
-        setRegistryName("bio_mash_ingot");
     }
 }

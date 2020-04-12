@@ -10,7 +10,7 @@ import net.minecraftforge.registries.ObjectHolder;
 public class ModItems {
 
     @ObjectHolder("tdfmod:bio_mash_ingot")
-    public static BioMashIngotItem BIOMASH_INGOT;
+    public static BioMashIngotItem BIO_MASH_INGOT;
 
     @ObjectHolder("tdfmod:dumpster_ring")
     public static DumpsterRingItem DUMPSTER_RING;
