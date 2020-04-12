@@ -18,7 +18,7 @@ import javax.annotation.Nonnull;
 
 public abstract class AbstractPrincipicArmor extends ArmorItem {
 
-    private static final IArmorMaterial principium =
+    private static final IArmorMaterial principic =
             new IArmorMaterial() {
                 @Override
                 public int getDurability(@Nonnull EquipmentSlotType slotIn) {
@@ -49,7 +49,7 @@ public abstract class AbstractPrincipicArmor extends ArmorItem {
 
                 @Override
                 public String getName() {
-                    return "tdfmod:principium";
+                    return "tdfmod:principic";
                 }
 
                 @Override
@@ -60,7 +60,7 @@ public abstract class AbstractPrincipicArmor extends ArmorItem {
 
     public AbstractPrincipicArmor(EquipmentSlotType slot) {
         super(
-                principium,
+                principic,
                 slot,
                 new Properties()
                     .maxDamage(-1)

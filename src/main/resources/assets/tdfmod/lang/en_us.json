@@ -3,8 +3,13 @@
 
   "item.tdfmod.bio_mash_ingot": "Bio Mash Ingot",
   "item.tdfmod.dumpster_ring": "Dumpster Ring",
-  "item.tdfmod.principic_helmet": "Principic Helmet",
-  "item.tdfmod.principic_chestplate": "Principic Chestplate",
-  "item.tdfmod.principic_leggings": "Principic Leggings",
-  "item.tdfmod.principic_boots": "Principic Boots"
+
+  "item.tdfmod.principic_helmet": "Principic Circlet",
+  "tooltip.tdfmod.principic_helmet": "The Strongest Helmet",
+  "item.tdfmod.principic_chestplate": "Principic Shoulder Pads",
+  "tooltip.tdfmod.principic_chestplate": "The Strongest Chestplate",
+  "item.tdfmod.principic_leggings": "Principic Waistband",
+  "tooltip.tdfmod.principic_leggings": "The Strongest Leggings",
+  "item.tdfmod.principic_boots": "Principic Ankle Bracelets",
+  "tooltip.tdfmod.principic_boots": "The Strongest Boots"
 }
