@@ -3,6 +3,7 @@ package com.alleluid.tdfmod.setup;
 import com.alleluid.tdfmod.TdfMod;
 import com.alleluid.tdfmod.blocks.ModBlocks;
 import com.alleluid.tdfmod.items.armor.AbstractPrincipicArmor;
+import com.alleluid.tdfmod.items.armor.PrincipicLeggingsItem;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -29,13 +30,12 @@ public class ModSetup {
                 if (!(item.getItem() instanceof AbstractPrincipicArmor)) {
                     fullPrin = false;
                 }
-            }
-            if (fullPrin){
-                if (event.getSource().damageType.equals("outOfWorld")) {
+
+                if (item.getItem() instanceof PrincipicLeggingsItem && event.getSource().damageType.equals("outOfWorld")) {
                     playerEntity.setPositionAndUpdate(playerEntity.posX, 260, playerEntity.posZ);
                 }
-                event.setCanceled(true);
             }
+            if (fullPrin){ event.setCanceled(true); }
         }
     }
 }
