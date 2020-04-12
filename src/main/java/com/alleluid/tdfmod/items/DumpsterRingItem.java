@@ -2,7 +2,6 @@ package com.alleluid.tdfmod.items;
 
 import com.alleluid.tdfmod.setup.ModSetup;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.item.Item;
@@ -13,7 +12,6 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.CapabilityProvider;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
 import top.theillusivec4.curios.api.capability.CuriosCapability;

@@ -3,15 +3,12 @@ package com.alleluid.tdfmod.setup;
 import com.alleluid.tdfmod.TdfMod;
 import com.alleluid.tdfmod.blocks.ModBlocks;
 import com.alleluid.tdfmod.items.armor.AbstractPrincipicArmor;
-import net.minecraft.entity.MoverType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-
-import java.util.Objects;
 
 @Mod.EventBusSubscriber(modid = TdfMod.MODID, bus=Mod.EventBusSubscriber.Bus.FORGE)
 public class ModSetup {

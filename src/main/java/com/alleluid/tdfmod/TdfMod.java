@@ -1,14 +1,8 @@
 package com.alleluid.tdfmod;
 
-import com.alleluid.tdfmod.blocks.ModBlocks;
-import com.alleluid.tdfmod.blocks.PrincipicBlock;
 import com.alleluid.tdfmod.setup.*;
-import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.InterModComms;
