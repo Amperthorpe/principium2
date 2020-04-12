@@ -2,7 +2,7 @@ package com.alleluid.tdfmod.setup;
 
 import com.alleluid.tdfmod.blocks.PrincipicBlock;
 import com.alleluid.tdfmod.items.BioMashIngotItem;
-import com.alleluid.tdfmod.items.DumpsterRingItem;
+import com.alleluid.tdfmod.items.trinkets.DumpsterRingItem;
 import com.alleluid.tdfmod.items.armor.PrincipicBootsItem;
 import com.alleluid.tdfmod.items.armor.PrincipicChestplateItem;
 import com.alleluid.tdfmod.items.armor.PrincipicHelmetItem;

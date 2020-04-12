@@ -1,4 +1,4 @@
-package com.alleluid.tdfmod.items;
+package com.alleluid.tdfmod.items.trinkets;
 
 import com.alleluid.tdfmod.setup.ModSetup;
 import net.minecraft.entity.Entity;
