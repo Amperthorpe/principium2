@@ -5,8 +5,6 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
@@ -21,7 +19,7 @@ public class PrincipicHelmetItem extends AbstractPrincipicArmor {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(Util.loreStyle(new TranslationTextComponent("tooltip.tdfmod.principic_helmet")));
         super.addInformation(stack, worldIn, tooltip, flagIn);
+        tooltip.add(Util.loreStyle(new TranslationTextComponent("tooltip.tdfmod.principic_helmet")));
     }
 }

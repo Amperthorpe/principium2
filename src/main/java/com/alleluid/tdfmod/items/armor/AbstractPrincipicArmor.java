@@ -13,8 +13,12 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.List;
 
 public abstract class AbstractPrincipicArmor extends ArmorItem {
 
@@ -91,5 +95,11 @@ public abstract class AbstractPrincipicArmor extends ArmorItem {
     @Nonnull
     public ITextComponent getDisplayName(@Nonnull ItemStack stack) {
         return super.getDisplayName(stack).applyTextStyle(TextFormatting.GOLD);
+    }
+
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+        super.addInformation(stack, worldIn, tooltip, flagIn);
+        tooltip.add(new TranslationTextComponent("tooltip.tdfmod.principic_armor"));
     }
 }
