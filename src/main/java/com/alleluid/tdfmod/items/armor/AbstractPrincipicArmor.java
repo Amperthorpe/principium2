@@ -21,7 +21,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-abstract class AbstractPrincipicArmor extends ArmorItem {
+public abstract class AbstractPrincipicArmor extends ArmorItem {
 
     private static final IArmorMaterial principium =
             new IArmorMaterial() {
@@ -32,7 +32,7 @@ abstract class AbstractPrincipicArmor extends ArmorItem {
 
                 @Override
                 public int getDamageReductionAmount(@Nonnull EquipmentSlotType slotIn) {
-                    return 100;
+                    return 0;
                 }
 
                 @Override
@@ -59,7 +59,7 @@ abstract class AbstractPrincipicArmor extends ArmorItem {
 
                 @Override
                 public float getToughness() {
-                    return 100;
+                    return 0;
                 }
             };
 
@@ -95,6 +95,6 @@ abstract class AbstractPrincipicArmor extends ArmorItem {
     @Override
     @Nonnull
     public ITextComponent getDisplayName(@Nonnull ItemStack stack) {
-        return super.getDisplayName(stack).applyTextStyle(TextFormatting.DARK_PURPLE);
+        return super.getDisplayName(stack).applyTextStyle(TextFormatting.GOLD);
     }
 }
