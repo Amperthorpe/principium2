@@ -2,5 +2,9 @@
   "block.tdfmod.principic_block": "Principic Block",
 
   "item.tdfmod.bio_mash_ingot": "Bio Mash Ingot",
-  "item.tdfmod.dumpster_ring": "Dumpster Ring"
+  "item.tdfmod.dumpster_ring": "Dumpster Ring",
+  "item.tdfmod.principic_helmet": "Principic Helmet",
+  "item.tdfmod.principic_chestplate": "Principic Chestplate",
+  "item.tdfmod.principic_leggings": "Principic Leggings",
+  "item.tdfmod.principic_boots": "Principic Boots"
 }

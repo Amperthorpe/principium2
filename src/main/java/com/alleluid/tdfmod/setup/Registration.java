@@ -3,6 +3,10 @@ package com.alleluid.tdfmod.setup;
 import com.alleluid.tdfmod.blocks.PrincipicBlock;
 import com.alleluid.tdfmod.items.BioMashIngotItem;
 import com.alleluid.tdfmod.items.DumpsterRingItem;
+import com.alleluid.tdfmod.items.armor.PrincipicBootsItem;
+import com.alleluid.tdfmod.items.armor.PrincipicChestplateItem;
+import com.alleluid.tdfmod.items.armor.PrincipicHelmetItem;
+import com.alleluid.tdfmod.items.armor.PrincipicLeggingsItem;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.inventory.container.ContainerType;
@@ -36,6 +40,11 @@ public class Registration {
     // Item Registration
     public static final RegistryObject<BioMashIngotItem> BIO_MASH_INGOT = ITEMS.register("bio_mash_ingot", BioMashIngotItem::new);
     public static final RegistryObject<DumpsterRingItem> DUMPSTER_RING = ITEMS.register("dumpster_ring", DumpsterRingItem::new);
+
+    public static final RegistryObject<PrincipicHelmetItem> PRINCIPIC_HELMET = ITEMS.register("principic_helmet", PrincipicHelmetItem::new);
+    public static final RegistryObject<PrincipicChestplateItem> PRINCIPIC_CHESTPLATE = ITEMS.register("principic_chestplate", PrincipicChestplateItem::new);
+    public static final RegistryObject<PrincipicLeggingsItem> PRINCIPIC_LEGGINGS = ITEMS.register("principic_leggings", PrincipicLeggingsItem::new);
+    public static final RegistryObject<PrincipicBootsItem> PRINCIPIC_BOOTS = ITEMS.register("principic_boots", PrincipicBootsItem::new);
 
     // Block Registration
     public static final RegistryObject<PrincipicBlock> PRINCIPIC_BLOCK = BLOCKS.register("principic_block", PrincipicBlock::new);
