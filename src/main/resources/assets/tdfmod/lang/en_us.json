@@ -12,5 +12,7 @@
   "tooltip.tdfmod.principic_leggings": "The Ultimate Leggings",
   "item.tdfmod.principic_boots": "Principic Ankle Bracelets",
   "tooltip.tdfmod.principic_boots": "The Ultimate Boots",
-  "tooltip.tdfmod.principic_armor": "Full set: Immunity to all damage, including void protection."
+  "tooltip.tdfmod.principic_armor": "Full set: Immunity to all damage, including void protection.",
+
+  "itemGroup.tdfmod": "Principium"
 }
