@@ -31,7 +31,7 @@ public abstract class AbstractPrincipicArmor extends ArmorItem {
 
                 @Override
                 public int getDamageReductionAmount(@Nonnull EquipmentSlotType slotIn) {
-                    return 0;
+                    return 1;
                 }
 
                 @Override
@@ -58,7 +58,7 @@ public abstract class AbstractPrincipicArmor extends ArmorItem {
 
                 @Override
                 public float getToughness() {
-                    return 0;
+                    return 1;
                 }
             };
 
