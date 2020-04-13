@@ -55,7 +55,7 @@ public class TdfMod
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
-
+        MinecraftForge.EVENT_BUS.register(new EventHandlerCommon());
 
 
     }

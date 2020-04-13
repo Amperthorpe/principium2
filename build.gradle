@@ -87,6 +87,7 @@ minecraft {
 repositories {
     maven {
         url = "https://maven.theillusivec4.top/"
+        url = "https://maven.theillusivec4.top"
     }
 }
 
@@ -116,6 +117,7 @@ dependencies {
 
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios:FORGE-1.14.4-1.0.6.1")
     compileOnly fg.deobf("top.theillusivec4.curios:curios:FORGE-1.14.4-1.0.6.1:api")
+    compile fg.deobf('top.theillusivec4.caelus:caelus:FORGE-1.14.4-1.0.1.2')
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
