@@ -15,6 +15,7 @@
   "tooltip.tdfmod.principic_boots": "Provides fall damage negation",
   "lore.tdfmod.principic_boots": "The Ultimate Boots",
   "tooltip.tdfmod.principic_armor": "Full set: Immunity to all damage.",
+  "item.tdfmod.transport_rod": "Transport Rod",
 
   "itemGroup.tdfmod": "Principium"
 }

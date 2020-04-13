@@ -2,6 +2,7 @@ package com.alleluid.tdfmod.setup;
 
 import com.alleluid.tdfmod.blocks.PrincipicBlock;
 import com.alleluid.tdfmod.items.BioMashIngotItem;
+import com.alleluid.tdfmod.items.TransportRodItem;
 import com.alleluid.tdfmod.items.trinkets.DumpsterRingItem;
 import com.alleluid.tdfmod.items.armor.PrincipicBootsItem;
 import com.alleluid.tdfmod.items.armor.PrincipicChestplateItem;
@@ -40,6 +41,7 @@ public class Registration {
     // Item Registration
     public static final RegistryObject<BioMashIngotItem> BIO_MASH_INGOT = ITEMS.register("bio_mash_ingot", BioMashIngotItem::new);
     public static final RegistryObject<DumpsterRingItem> DUMPSTER_RING = ITEMS.register("dumpster_ring", DumpsterRingItem::new);
+    public static final RegistryObject<TransportRodItem> TRANSPORT_ROD = ITEMS.register("transport_rod", TransportRodItem::new);
 
     public static final RegistryObject<PrincipicHelmetItem> PRINCIPIC_HELMET = ITEMS.register("principic_helmet", PrincipicHelmetItem::new);
     public static final RegistryObject<PrincipicChestplateItem> PRINCIPIC_CHESTPLATE = ITEMS.register("principic_chestplate", PrincipicChestplateItem::new);
