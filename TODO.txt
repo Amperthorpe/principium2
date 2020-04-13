@@ -1,4 +1,9 @@
+ - Refactor Util.loreStyle to take only a string, and create the TranslationTextComponent
+ - Clean up single-line if statements
  - Add more to armor?
  - Is publishing this to Curse right away necessary?
  - Test all usable items in Create deployer.
+ - Hearthstone as trinket?
+ - Remove redundant ModBlocks.java
+ - Transport rod change to shift-right click to go through walls.
  - Fix lore toolip translation keys for chestplate and helmet
