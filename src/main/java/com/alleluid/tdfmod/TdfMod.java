@@ -1,20 +1,25 @@
 package com.alleluid.tdfmod;
 
+import com.alleluid.tdfmod.client.render.ChestElytraRenderLayer;
 import com.alleluid.tdfmod.setup.*;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
+import net.minecraft.client.renderer.entity.LivingRenderer;
+import net.minecraft.client.renderer.entity.model.EntityModel;
+import net.minecraft.entity.LivingEntity;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
+import net.minecraftforge.fml.event.lifecycle.*;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import top.theillusivec4.caelus.client.renderer.CaelusElytraLayer;
 import top.theillusivec4.curios.api.CuriosAPI;
 import top.theillusivec4.curios.api.imc.CurioIMCMessage;
 
@@ -85,4 +90,24 @@ public class TdfMod
         // do something when the server starts
         LOGGER.info("HELLO from server starting");
     }
+
+    @Mod.EventBusSubscriber(modid = MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
+    public static class ClientSetup {
+
+        @SubscribeEvent
+        public static void postSetup(FMLLoadCompleteEvent evt) {
+
+            EntityRendererManager rendererManager = Minecraft.getInstance().getRenderManager();
+            rendererManager.getSkinMap().values()
+                    .forEach(renderer -> renderer.addLayer(new ChestElytraRenderLayer<>(renderer)));
+            rendererManager.renderers.values().forEach(renderer -> {
+                if (renderer instanceof LivingRenderer) {
+                    LivingRenderer<? extends LivingEntity, ? extends EntityModel> livingRenderer =
+                            (LivingRenderer<? extends LivingEntity, ? extends EntityModel>) renderer;
+                    livingRenderer.addLayer(new ChestElytraRenderLayer(livingRenderer));
+                }
+            });
+        }
+    }
+
 }

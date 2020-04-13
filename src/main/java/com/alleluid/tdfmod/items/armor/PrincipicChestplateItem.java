@@ -39,13 +39,6 @@ public class PrincipicChestplateItem extends AbstractPrincipicArmor {
 
     public static void onRenderElytraEvent(RenderElytraEvent evt) {
         evt.setRenderElytra(false);
-        for(ItemStack a : evt.getEntityLiving().getArmorInventoryList())
-        {
-            if (a.getItem() instanceof PrincipicChestplateItem && isElytra(a))
-            {
-                evt.setRenderElytra(true);
-            }
-        }
     }
 
     @Override
@@ -71,7 +64,7 @@ public class PrincipicChestplateItem extends AbstractPrincipicArmor {
         stack.setTag(nbt);
     }
 
-    private static boolean isElytra(ItemStack stack){
+    public static boolean isElytra(ItemStack stack){
         checkNBT(stack);
         return stack.getTag().getBoolean("ElytraMode");
     }
