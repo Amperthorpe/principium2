@@ -53,8 +53,9 @@ public class ChestElytraRenderLayer<T extends LivingEntity, M extends EntityMode
 
             if (renderElytra) {
                 GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+                GlStateManager.enableAlphaTest();
                 GlStateManager.enableBlend();
-                GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
 
                 if (entityIn instanceof AbstractClientPlayerEntity) {
                     AbstractClientPlayerEntity abstractclientplayerentity = (AbstractClientPlayerEntity) entityIn;
@@ -90,6 +91,7 @@ public class ChestElytraRenderLayer<T extends LivingEntity, M extends EntityMode
 
                 GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
                 GlStateManager.disableBlend();
+                GlStateManager.disableAlphaTest();
                 GlStateManager.popMatrix();
             }
         }
