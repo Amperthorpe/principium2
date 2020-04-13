@@ -1,5 +1,6 @@
 package com.alleluid.tdfmod;
 
+import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.particles.BlockParticleData;
 import net.minecraft.particles.ParticleTypes;
@@ -20,4 +21,5 @@ public class Util {
     public static void setPositionAndRotationAndUpdate(Entity entity, Double x, Double y, Double z){
         setPositionAndRotationAndUpdate(entity, x, y, z, entity.rotationYaw, entity.rotationPitch);
     }
+
 }

@@ -18,6 +18,10 @@
   "lore.tdfmod.principic_boots": "The Ultimate Boots",
   "tooltip.tdfmod.principic_armor": "Full set: Immunity to all damage.",
   "item.tdfmod.transport_rod": "Transport Rod",
+  "tooltip.tdfmod.transport_rod.set_block_pos": "Set to: [%d, %d, %d]",
+  "tooltip.tdfmod.transport_rod.no_set_block_pos": "Set to: [~]",
+  "tooltip.tdfmod.transport_rod.player_not_sneaking": "Player must be sneaking to teleport.",
+  "status.tdfmod.transport_rod.set_block_pos": "Set Transport Rod to [%d, %d, %d]",
 
 
   "itemGroup.tdfmod": "Principium"
