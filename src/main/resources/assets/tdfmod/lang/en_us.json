@@ -9,10 +9,12 @@
   "item.tdfmod.principic_chestplate": "Principic Shoulder Pads",
   "tooltip.tdfmod.principic_chestplate": "The Ultimate Chestplate",
   "item.tdfmod.principic_leggings": "Principic Waistband",
-  "tooltip.tdfmod.principic_leggings": "The Ultimate Leggings",
+  "tooltip.tdfmod.principic_leggings": "Provides void protection",
+  "lore.tdfmod.principic_leggings": "The Ultimate Leggings",
   "item.tdfmod.principic_boots": "Principic Ankle Bracelets",
-  "tooltip.tdfmod.principic_boots": "The Ultimate Boots",
-  "tooltip.tdfmod.principic_armor": "Full set: Immunity to all damage, including void protection.",
+  "tooltip.tdfmod.principic_boots": "Provides fall damage negation",
+  "lore.tdfmod.principic_boots": "The Ultimate Boots",
+  "tooltip.tdfmod.principic_armor": "Full set: Immunity to all damage.",
 
   "itemGroup.tdfmod": "Principium"
 }
