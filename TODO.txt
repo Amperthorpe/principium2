@@ -7,3 +7,4 @@
  - Remove redundant ModBlocks.java
  - Transport rod change to shift-right click to go through walls.
  - Fix lore toolip translation keys for chestplate and helmet
+ - Modify dumspter ring to check for IMob.
