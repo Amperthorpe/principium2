@@ -54,7 +54,7 @@ public class PrincipicChestplateItem extends AbstractPrincipicArmor {
         if(nbt==null)
             nbt = new CompoundNBT();
         if(!nbt.contains("ElytraMode"))
-            nbt.putBoolean("ElytraMode",false);
+            nbt.putBoolean("ElytraMode",true);
         stack.setTag(nbt);
     }
 
