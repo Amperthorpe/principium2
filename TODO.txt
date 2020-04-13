@@ -1,4 +1,4 @@
  - Add more to armor?
  - Is publishing this to Curse right away necessary?
- - Waystone/teleport item
+ - Test all usable items in Create deployer.
  - Fix lore toolip translation keys for chestplate and helmet
