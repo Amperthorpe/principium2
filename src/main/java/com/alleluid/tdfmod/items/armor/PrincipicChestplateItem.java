@@ -2,6 +2,7 @@ package com.alleluid.tdfmod.items.armor;
 
 import com.alleluid.tdfmod.Util;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -16,7 +17,10 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
+import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import top.theillusivec4.caelus.api.CaelusAPI;
+import top.theillusivec4.caelus.api.event.RenderElytraEvent;
 
 import javax.annotation.Nullable;
 import javax.naming.CompoundName;
@@ -33,6 +37,17 @@ public class PrincipicChestplateItem extends AbstractPrincipicArmor {
             UUID.fromString("668bdbee-32b6-4c4b-bf6a-5a30f4d02e37"), "Flight modifier", 1.0d,
             AttributeModifier.Operation.ADDITION);
 
+    public static void onRenderElytraEvent(RenderElytraEvent evt) {
+        evt.setRenderElytra(false);
+        for(ItemStack a : evt.getEntityLiving().getArmorInventoryList())
+        {
+            if (a.getItem() instanceof PrincipicChestplateItem && isElytra(a))
+            {
+                evt.setRenderElytra(true);
+            }
+        }
+    }
+
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 
@@ -46,8 +61,6 @@ public class PrincipicChestplateItem extends AbstractPrincipicArmor {
             tooltip.add((new TranslationTextComponent("tooltip.tdfmod.principic_chestplate.elytra_disabled")));
 
     }
-
-
 
     private static void checkNBT(ItemStack stack) {
         CompoundNBT nbt = stack.getTag();
