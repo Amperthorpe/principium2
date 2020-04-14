@@ -41,7 +41,7 @@ public class DumpsterRingItem extends Item {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
-        tooltip.add(new TranslationTextComponent("tooltip.tdfmod.dumpster_ring", range));
+        tooltip.add(Util.tooltipStyle("tooltip.tdfmod.dumpster_ring", range));
         tooltip.add(Util.loreStyle("lore.tdfmod.dumpster_ring"));
     }
 

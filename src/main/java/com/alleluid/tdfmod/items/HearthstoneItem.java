@@ -36,9 +36,9 @@ public class HearthstoneItem extends Item {
         DimensionType storedDim = getStoredDim(stack);
         if (pos.getY() > 0 && storedDim != null){
             String dimString = DimensionType.getKey(storedDim).getPath();
-            tooltip.add(new TranslationTextComponent("tooltip.tdfmod.hearthstone.set_block_pos", pos.getX(), pos.getY(), pos.getZ(), dimString));
+            tooltip.add(Util.tooltipStyle("tooltip.tdfmod.hearthstone.set_block_pos", pos.getX(), pos.getY(), pos.getZ(), dimString));
         } else {
-            tooltip.add(new TranslationTextComponent("tooltip.tdfmod.hearthstone.no_set_block_pos"));
+            tooltip.add(Util.tooltipStyle("tooltip.tdfmod.hearthstone.no_set_block_pos"));
         }
 
         tooltip.add(Util.loreStyle("lore.tdfmod.hearthstone"));

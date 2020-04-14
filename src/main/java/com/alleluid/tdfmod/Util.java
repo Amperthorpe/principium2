@@ -12,8 +12,16 @@ public class Util {
         return textComponent.applyTextStyle(TextFormatting.DARK_PURPLE).applyTextStyle(TextFormatting.ITALIC);
     }
 
-    public static ITextComponent loreStyle(String key){
-        return loreStyle(new TranslationTextComponent(key));
+    public static ITextComponent loreStyle(String key, Object...args){
+        return loreStyle(new TranslationTextComponent(key, args));
+    }
+
+    public static ITextComponent tooltipStyle(ITextComponent textComponent){
+        return textComponent.applyTextStyle(TextFormatting.GRAY);
+    }
+
+    public static ITextComponent tooltipStyle(String key, Object... args){
+        return tooltipStyle(new TranslationTextComponent(key, args));
     }
 
     public static void setPositionAndRotationAndUpdate(Entity entity, Double x, Double y, Double z, Float yaw, Float pitch) {

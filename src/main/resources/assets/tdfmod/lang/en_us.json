@@ -16,7 +16,7 @@
   "item.tdfmod.principic_chestplate": "Principic Shoulder Pads",
   "lore.tdfmod.principic_chestplate": "The Ultimate Chestplate",
   "tooltip.tdfmod.principic_chestplate.effect_enabled": "Right click to toggle Elytra: Active",
-  "tooltip.tdfmod.principic_chestplate.effect_disabled": "Elytra: Inactive",
+  "tooltip.tdfmod.principic_chestplate.effect_disabled": "Right click to toggle Elytra: Inactive",
 
   "item.tdfmod.principic_leggings": "Principic Waistband",
   "lore.tdfmod.principic_leggings": "The Ultimate Leggings",

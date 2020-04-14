@@ -41,9 +41,9 @@ public class PrincipicChestplateItem extends AbstractPrincipicArmor implements I
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if(isElytra(stack))
-            tooltip.add((new TranslationTextComponent("tooltip.tdfmod.principic_chestplate.effect_enabled")));
+            tooltip.add(Util.tooltipStyle("tooltip.tdfmod.principic_chestplate.effect_enabled"));
         else
-            tooltip.add((new TranslationTextComponent("tooltip.tdfmod.principic_chestplate.effect_disabled")));
+            tooltip.add(Util.tooltipStyle("tooltip.tdfmod.principic_chestplate.effect_disabled"));
         super.addInformation(stack, worldIn, tooltip, flagIn);
         tooltip.add(Util.loreStyle("lore.tdfmod.principic_chestplate"));
 
