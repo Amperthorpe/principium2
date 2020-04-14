@@ -34,8 +34,14 @@
 
 
   "item.tdfmod.transport_rod": "Transport Rod",
+  "tooltip.tdfmod.transport_rod.1": "Right click to teleport on to the block you're looking at.",
+  "tooltip.tdfmod.transport_rod.2": "Range %d. Will search upwards %d blocks for a space.",
+  "tooltip.tdfmod.transport_rod.3": "Sneak + right click a block to teleport through it.",
+  "lore.tdfmod.transport_rod": "Zzzvoop!",
 
   "item.tdfmod.dumpster_ring": "Dumpster Ring",
+  "tooltip.tdfmod.dumpster_ring": "Eliminates mobs in a %d block range.",
+  "lore.tdfmod.dumpster_ring": "Dump 'Em",
 
   "item.tdfmod.hearthstone": "Hearthstone",
   "lore.tdfmod.hearthstone": "You could make a card game out of this.",

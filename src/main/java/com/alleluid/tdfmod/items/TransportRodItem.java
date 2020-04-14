@@ -37,6 +37,15 @@ public class TransportRodItem extends Item {
     }
 
     @Override
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+        super.addInformation(stack, worldIn, tooltip, flagIn);
+        tooltip.add(new TranslationTextComponent("tooltip.tdfmod.transport_rod.1"));
+        tooltip.add(new TranslationTextComponent("tooltip.tdfmod.transport_rod.2", (int) teleRange, maxBlocksSearched));
+        tooltip.add(new TranslationTextComponent("tooltip.tdfmod.transport_rod.3"));
+        tooltip.add(Util.loreStyle("lore.tdfmod.transport_rod"));
+    }
+
+    @Override
     @Nonnull
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         if (!playerIn.isSneaking() && !didAltTeleport){
