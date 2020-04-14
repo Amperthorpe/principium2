@@ -1,6 +1,8 @@
 package com.alleluid.tdfmod;
 
 import com.alleluid.tdfmod.client.render.ChestElytraRenderLayer;
+import com.alleluid.tdfmod.event.EventHandlerClient;
+import com.alleluid.tdfmod.network.ClickableHandler;
 import com.alleluid.tdfmod.setup.*;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
@@ -51,6 +53,8 @@ public class TdfMod
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(new EventHandlerClient());
+        ClickableHandler.registerPackets();
 
         Registration.init();
     }
