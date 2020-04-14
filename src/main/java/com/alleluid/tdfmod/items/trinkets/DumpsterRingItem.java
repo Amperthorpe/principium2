@@ -59,9 +59,9 @@ public class DumpsterRingItem extends Item {
 
                     for (Entity e:toKill) {
                         if (e instanceof MonsterEntity){
-                            ((MonsterEntity)e).setFire(1);
+                            e.setFire(1);
                             ((MonsterEntity)e).setHealth(0);
-                            ((MonsterEntity) e).spawnExplosionParticle();
+                            ((MonsterEntity)e).spawnExplosionParticle();
                         }
                     }
                 }
