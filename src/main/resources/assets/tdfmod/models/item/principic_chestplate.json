@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "tdfmod:item/principic_chestplate",
-    "layer1": "tdfmod:item/golden_elytra"
+    "layer0": "tdfmod:item/golden_elytra",
+    "layer1": "tdfmod:item/principic_chestplate"
   }
 }

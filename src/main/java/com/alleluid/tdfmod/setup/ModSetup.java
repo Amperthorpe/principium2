@@ -1,7 +1,6 @@
 package com.alleluid.tdfmod.setup;
 
 import com.alleluid.tdfmod.TdfMod;
-import com.alleluid.tdfmod.blocks.ModBlocks;
 import com.alleluid.tdfmod.items.armor.AbstractPrincipicArmor;
 import com.alleluid.tdfmod.items.armor.PrincipicBootsItem;
 import com.alleluid.tdfmod.items.armor.PrincipicLeggingsItem;
@@ -18,7 +17,7 @@ public class ModSetup {
     public static final ItemGroup ITEM_GROUP = new ItemGroup(TdfMod.MODID) {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(ModBlocks.PRINCIPIC_BLOCK);
+            return new ItemStack(Registration.PRINCIPIC_BLOCK.get());
         }
     };
 

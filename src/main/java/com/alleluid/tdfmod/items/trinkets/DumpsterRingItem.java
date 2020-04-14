@@ -1,6 +1,8 @@
 package com.alleluid.tdfmod.items.trinkets;
 
+import com.alleluid.tdfmod.Util;
 import com.alleluid.tdfmod.setup.ModSetup;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.MonsterEntity;
@@ -11,6 +13,9 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
@@ -32,6 +37,14 @@ public class DumpsterRingItem extends Item {
                 .group(ModSetup.ITEM_GROUP)
         );
     }
+
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+        super.addInformation(stack, worldIn, tooltip, flagIn);
+        tooltip.add(Util.tooltipStyle("tooltip.tdfmod.dumpster_ring", range));
+        tooltip.add(Util.loreStyle("lore.tdfmod.dumpster_ring"));
+    }
+
     @Override
     public ICapabilityProvider initCapabilities(ItemStack stack, CompoundNBT unused) {
         return new Provider(new ICurio() {
@@ -46,9 +59,9 @@ public class DumpsterRingItem extends Item {
 
                     for (Entity e:toKill) {
                         if (e instanceof MonsterEntity){
-                            ((MonsterEntity)e).setFire(1);
+                            e.setFire(1);
                             ((MonsterEntity)e).setHealth(0);
-                            ((MonsterEntity) e).spawnExplosionParticle();
+                            ((MonsterEntity)e).spawnExplosionParticle();
                         }
                     }
                 }
