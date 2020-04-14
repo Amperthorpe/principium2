@@ -1,5 +1,6 @@
 package com.alleluid.tdfmod.setup;
 
+import com.alleluid.tdfmod.blocks.DumpsterBlock;
 import com.alleluid.tdfmod.blocks.PrincipicBlock;
 import com.alleluid.tdfmod.items.BioMashIngotItem;
 import com.alleluid.tdfmod.items.HearthstoneItem;
@@ -54,5 +55,6 @@ public class Registration {
     public static final RegistryObject<PrincipicBlock> PRINCIPIC_BLOCK = BLOCKS.register("principic_block", PrincipicBlock::new);
     public static final RegistryObject<Item> PRINCIPIC_BLOCK_ITEM = ITEMS.register("principic_block", () -> new BlockItem(PRINCIPIC_BLOCK.get(), new Item.Properties().group(ModSetup.ITEM_GROUP)));
 
-
+    public static final RegistryObject<DumpsterBlock> DUMPSTER_BLOCK = BLOCKS.register("dumpster_block", DumpsterBlock::new);
+    public static final RegistryObject<Item> DUMPSTER_BLOCK_ITEM = ITEMS.register("dumpster_block", () -> new BlockItem(DUMPSTER_BLOCK.get(), new Item.Properties().group(ModSetup.ITEM_GROUP)));
 }
