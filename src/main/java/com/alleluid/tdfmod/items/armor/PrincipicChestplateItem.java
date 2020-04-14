@@ -23,6 +23,8 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.UUID;
 
+import static com.alleluid.tdfmod.TdfMod.MODID;
+
 public class PrincipicChestplateItem extends AbstractPrincipicArmor implements IClickable {
 
     public PrincipicChestplateItem() {
@@ -30,7 +32,7 @@ public class PrincipicChestplateItem extends AbstractPrincipicArmor implements I
     }
 
     public static AttributeModifier FLIGHT_MODIFIER = new AttributeModifier(
-            UUID.fromString("668bdbee-32b6-4c4b-bf6a-5a30f4d02e37"), "Flight modifier", 1.0d,
+            UUID.fromString("1e59d018-c9b1-4152-a474-7d318cc41a00"), MODID + "flight_modifier", 1.0d,
             AttributeModifier.Operation.ADDITION);
 
     public static void onRenderElytraEvent(RenderElytraEvent evt) {
