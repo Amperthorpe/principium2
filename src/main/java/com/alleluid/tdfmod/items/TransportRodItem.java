@@ -77,7 +77,7 @@ public class TransportRodItem extends Item {
     @Nonnull
     public ActionResultType onItemUse(ItemUseContext context) {
         didAltTeleport = true;
-        if (!context.isPlacerSneaking()) {
+        if (context.isPlacerSneaking()) {
             BlockPos newPos;
             switch (context.getFace()) {
                 case DOWN: newPos = new BlockPos(
@@ -126,6 +126,8 @@ public class TransportRodItem extends Item {
                 didAltTeleport = false;
                 return ActionResultType.FAIL;
             }
+        } else if (context.getPlayer() != null){
+            onItemRightClick(context.getWorld(), context.getPlayer(), context.getHand());
         }
         return super.onItemUse(context);
     }
