@@ -5,14 +5,19 @@ import com.alleluid.tdfmod.network.ClickableHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.client.gui.screen.inventory.CreativeScreen;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.PlayerContainer;
+import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundEvents;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.GuiScreenEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
 public class EventHandlerClient {
 
@@ -29,18 +34,36 @@ public class EventHandlerClient {
 
             boolean rightClickDown = event.getButton() == 1;
 
+            //TODO: error handling
             try {
                 if (rightClickDown && gui.getSlotUnderMouse() != null) {
-                    int slot = gui.getSlotUnderMouse().slotNumber;
-                    Container container = gui.getContainer();
-                    if (container != null && slot < container.inventorySlots.size() &&
-                            container.getSlot(slot) != null && !container.getSlot(slot).getStack().isEmpty()) {
-                        ItemStack item = gui.getContainer().getSlot(slot).getStack();
-                        if (item.getItem() instanceof IClickable) {
-                            //example: is a charm or something
+                    Slot underMouse = gui.getSlotUnderMouse();
+                    int slot = 0;
+                    Container container;
+                    if (gui.getContainer() instanceof CreativeScreen.CreativeContainer) {
+                        slot = underMouse.getSlotIndex();
+                        PlayerInventory inv = (PlayerInventory)underMouse.inventory;
+                        ItemStack item = inv.getStackInSlot(slot);
+                        if (item.getItem() instanceof IClickable)
+                        {
                             ClickableHandler.INSTANCE.sendToServer(new ClickableHandler.ClickActionMessage(slot, true));
                             Minecraft.getInstance().player.playSound(SoundEvents.UI_BUTTON_CLICK, 1, 1);
                             event.setCanceled(true);
+                        }
+
+                    }
+                    else {
+                        slot = underMouse.slotNumber;
+                        container = gui.getContainer();
+                        if (container != null && slot < container.inventorySlots.size() &&
+                                container.getSlot(slot) != null && !container.getSlot(slot).getStack().isEmpty()) {
+                            ItemStack item = gui.getContainer().getSlot(slot).getStack();
+                            if (item.getItem() instanceof IClickable) {
+                                //example: is a charm or something
+                                ClickableHandler.INSTANCE.sendToServer(new ClickableHandler.ClickActionMessage(slot, true));
+                                Minecraft.getInstance().player.playSound(SoundEvents.UI_BUTTON_CLICK, 1, 1);
+                                event.setCanceled(true);
+                            }
                         }
                     }
                 }

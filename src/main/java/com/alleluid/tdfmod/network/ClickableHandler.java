@@ -4,7 +4,9 @@ package com.alleluid.tdfmod.network;
 import com.alleluid.tdfmod.items.IClickable;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.ClientPlayerEntity;
+import net.minecraft.client.gui.screen.inventory.CreativeScreen;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.container.PlayerContainer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
@@ -66,6 +68,8 @@ public class ClickableHandler
             {
                 context.enqueueWork(() -> {
 
+                    //TODO: error handling
+
                     if(!msg.success)
                         return;
 
@@ -74,11 +78,20 @@ public class ClickableHandler
                         return;
                     }
 
-                    ItemStack item = sender.openContainer.getSlot(msg.slot).getStack();
+                    ItemStack item;
+                    if(sender.openContainer instanceof CreativeScreen.CreativeContainer) {
+                        if(msg.slot < sender.inventory.mainInventory.size())
+                            item = sender.inventory.getStackInSlot(msg.slot);
+                        else
+                            item = sender.inventory.armorInventory.get(msg.slot-sender.inventory.mainInventory.size());
+                    }
+                    else {
+                        item = sender.openContainer.getSlot(msg.slot).getStack();
+                    }
 
                     if(item.getItem() instanceof IClickable)
                     {
-                        Boolean result = ((IClickable) item.getItem()).onClick(sender, item, sender.openContainer, msg.slot);
+                        ((IClickable) item.getItem()).onClick(sender, item, sender.openContainer, msg.slot);
                     }
 
                 });
@@ -92,7 +105,16 @@ public class ClickableHandler
                         return;
                     }
 
-                    ItemStack item = sender.openContainer.getSlot(msg.slot).getStack();
+                    ItemStack item;
+                    if(sender.openContainer instanceof PlayerContainer) {
+                        if(msg.slot < sender.inventory.mainInventory.size())
+                            item = sender.openContainer.getSlot(msg.slot).getStack();
+                        else
+                            item = sender.inventory.armorInventory.get(msg.slot-sender.inventory.mainInventory.size());
+                    }
+                    else {
+                        item = sender.openContainer.getSlot(msg.slot).getStack();
+                    }
 
                     if(item.getItem() instanceof IClickable)
                     {
