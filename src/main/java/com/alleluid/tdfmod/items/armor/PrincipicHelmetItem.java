@@ -20,6 +20,6 @@ public class PrincipicHelmetItem extends AbstractPrincipicArmor {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
-        tooltip.add(Util.loreStyle(new TranslationTextComponent("tooltip.tdfmod.principic_helmet")));
+        tooltip.add(Util.loreStyle("tooltip.tdfmod.principic_helmet"));
     }
 }

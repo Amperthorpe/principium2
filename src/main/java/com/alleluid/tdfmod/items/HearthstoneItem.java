@@ -41,7 +41,7 @@ public class HearthstoneItem extends Item {
             tooltip.add(new TranslationTextComponent("tooltip.tdfmod.hearthstone.no_set_block_pos"));
         }
 
-        tooltip.add(Util.loreStyle(new TranslationTextComponent("lore.tdfmod.hearthstone")));
+        tooltip.add(Util.loreStyle("lore.tdfmod.hearthstone"));
         super.addInformation(stack, worldIn, tooltip, flagIn);
     }
 
