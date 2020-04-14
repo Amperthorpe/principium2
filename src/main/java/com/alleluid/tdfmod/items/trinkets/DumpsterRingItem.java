@@ -5,6 +5,7 @@ import com.alleluid.tdfmod.setup.ModSetup;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -58,7 +59,7 @@ public class DumpsterRingItem extends Item {
                             livingEntity.posX-range,livingEntity.posY-range, livingEntity.posZ-range));
 
                     for (Entity e:toKill) {
-                        if (e instanceof MonsterEntity){
+                        if (e instanceof IMob){
                             e.setFire(1);
                             ((MonsterEntity)e).setHealth(0);
                             ((MonsterEntity)e).spawnExplosionParticle();

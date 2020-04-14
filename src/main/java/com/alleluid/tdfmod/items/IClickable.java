@@ -11,7 +11,7 @@ public interface IClickable {
 
     //do the action - this is performed server side
     //returns true when behavior is as expected
-    public boolean onClick(PlayerEntity player, ItemStack itemStack, Container container, int slot);
+    boolean onClick(PlayerEntity player, ItemStack itemStack, Container container, int slot);
 
 }
 

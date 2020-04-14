@@ -4,4 +4,3 @@
  - Add missing bonus effects to armor
  - Add hearthstone cooldown and effects
  - Add transport rod effects
- - Modify dumspter ring to check for IMob.

@@ -1,7 +1,7 @@
 package com.alleluid.tdfmod;
 
 import com.alleluid.tdfmod.client.render.ChestElytraRenderLayer;
-import com.alleluid.tdfmod.event.EventHandlerClient;
+import com.alleluid.tdfmod.client.event.EventHandlerClient;
 import com.alleluid.tdfmod.network.ClickableHandler;
 import com.alleluid.tdfmod.setup.*;
 import net.minecraft.block.Blocks;
@@ -21,7 +21,6 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import top.theillusivec4.caelus.client.renderer.CaelusElytraLayer;
 import top.theillusivec4.curios.api.CuriosAPI;
 import top.theillusivec4.curios.api.imc.CurioIMCMessage;
 
