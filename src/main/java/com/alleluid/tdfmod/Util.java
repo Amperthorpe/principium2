@@ -4,6 +4,7 @@ import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.particles.BlockParticleData;
 import net.minecraft.particles.ParticleTypes;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
@@ -21,5 +22,10 @@ public class Util {
     public static void setPositionAndRotationAndUpdate(Entity entity, Double x, Double y, Double z){
         setPositionAndRotationAndUpdate(entity, x, y, z, entity.rotationYaw, entity.rotationPitch);
     }
+
+    public static boolean checkHeadspace(World world, BlockPos pos){
+        return world.isAirBlock(pos) && world.isAirBlock(pos.up());
+    }
+
 
 }
