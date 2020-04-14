@@ -77,7 +77,8 @@ public class TdfMod
     {
         // some example code to dispatch IMC to another mod
         InterModComms.sendTo("tdfmod", "helloworld", () -> { LOGGER.info("Hello world from tdfmod."); return "Hello world"; });
-        InterModComms.sendTo("curios", CuriosAPI.IMC.REGISTER_TYPE, () -> new CurioIMCMessage("ring"));
+        InterModComms.sendTo("curios", CuriosAPI.IMC.REGISTER_TYPE, () -> new CurioIMCMessage("ring").setSize(2));
+        InterModComms.sendTo("curios", CuriosAPI.IMC.REGISTER_TYPE, () -> new CurioIMCMessage("trinket").setSize(2));
     }
 
     private void processIMC(final InterModProcessEvent event)

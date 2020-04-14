@@ -3,7 +3,7 @@ package com.alleluid.tdfmod.setup;
 import com.alleluid.tdfmod.blocks.DumpsterBlock;
 import com.alleluid.tdfmod.blocks.PrincipicBlock;
 import com.alleluid.tdfmod.items.BioMashIngotItem;
-import com.alleluid.tdfmod.items.HearthstoneItem;
+import com.alleluid.tdfmod.items.trinkets.HearthstoneItem;
 import com.alleluid.tdfmod.items.TransportRodItem;
 import com.alleluid.tdfmod.items.trinkets.DumpsterRingItem;
 import com.alleluid.tdfmod.items.armor.PrincipicBootsItem;

@@ -1,27 +1,35 @@
-package com.alleluid.tdfmod.items;
+package com.alleluid.tdfmod.items.trinkets;
 
 import com.alleluid.tdfmod.Util;
+import com.alleluid.tdfmod.items.IClickable;
 import com.alleluid.tdfmod.setup.ModSetup;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.monster.IMob;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.*;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.Dimension;
 import net.minecraft.world.dimension.DimensionType;
+import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import top.theillusivec4.curios.api.capability.ICurio;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class HearthstoneItem extends Item {
+public class HearthstoneItem extends Item implements IClickable {
     public HearthstoneItem() {
         super(new Properties()
                 .maxStackSize(1)
@@ -45,6 +53,35 @@ public class HearthstoneItem extends Item {
         super.addInformation(stack, worldIn, tooltip, flagIn);
     }
 
+    @Nullable
+    @Override
+    public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundNBT nbt) {
+        return new DumpsterRingItem.Provider(new ICurio() {
+
+            @Override
+            public void playEquipSound(LivingEntity livingEntity) {
+                livingEntity.world
+                        .playSound(null, livingEntity.getPosition(), SoundEvents.ITEM_ARMOR_EQUIP_GOLD,
+                                SoundCategory.NEUTRAL, 1.0f, 1.0f);
+            }
+
+            @Override
+            public DropRule getDropRule(LivingEntity livingEntity) {
+                return ICurio.DropRule.ALWAYS_KEEP;
+            }
+
+            @Override
+            public boolean canRightClickEquip() {
+                return false;
+            }
+        }) {};
+    }
+
+    @Override
+    public boolean onClick(PlayerEntity player, ItemStack itemStack, Container container, int slot) {
+        teleportHome(player.world, player,itemStack);
+        return true;
+    }
 
     private static void checkNBT(ItemStack stack) {
         CompoundNBT nbt = stack.getTag();
