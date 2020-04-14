@@ -50,7 +50,7 @@ public class PrincipicChestplateItem extends AbstractPrincipicArmor implements I
 
 
         super.addInformation(stack, worldIn, tooltip, flagIn);
-        tooltip.add(Util.loreStyle("tooltip.tdfmod.principic_chestplate"));
+        tooltip.add(Util.loreStyle("lore.tdfmod.principic_chestplate"));
 
         if(isElytra(stack))
             tooltip.add((new TranslationTextComponent("tooltip.tdfmod.principic_chestplate.elytra_enabled")));

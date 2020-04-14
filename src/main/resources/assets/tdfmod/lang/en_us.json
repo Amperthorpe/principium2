@@ -7,10 +7,10 @@
   "tooltip.tdfmod.principic_armor": "Full set: Immunity to all damage.",
 
   "item.tdfmod.principic_helmet": "Principic Circlet",
-  "tooltip.tdfmod.principic_helmet": "The Ultimate Helmet",
+  "lore.tdfmod.principic_helmet": "The Ultimate Helmet",
 
   "item.tdfmod.principic_chestplate": "Principic Shoulder Pads",
-  "tooltip.tdfmod.principic_chestplate": "The Ultimate Chestplate",
+  "lore.tdfmod.principic_chestplate": "The Ultimate Chestplate",
   "tooltip.tdfmod.principic_chestplate.elytra_enabled": "Elytra: Active",
   "tooltip.tdfmod.principic_chestplate.elytra_disabled": "Elytra: Inactive",
 
