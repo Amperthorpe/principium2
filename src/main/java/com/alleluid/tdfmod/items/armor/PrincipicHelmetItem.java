@@ -19,6 +19,8 @@ public class PrincipicHelmetItem extends AbstractPrincipicArmor {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+        tooltip.add(new TranslationTextComponent("tooltip.tdfmod.principic_helmet.effect_disabled"));
+        tooltip.add(new TranslationTextComponent("tooltip.tdfmod.principic_helmet"));
         super.addInformation(stack, worldIn, tooltip, flagIn);
         tooltip.add(Util.loreStyle("lore.tdfmod.principic_helmet"));
     }

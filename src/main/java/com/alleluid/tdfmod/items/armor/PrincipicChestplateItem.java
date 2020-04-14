@@ -3,14 +3,11 @@ package com.alleluid.tdfmod.items.armor;
 import com.alleluid.tdfmod.Util;
 import com.alleluid.tdfmod.items.IClickable;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.inventory.container.Container;
-import net.minecraft.inventory.container.Slot;
-import net.minecraft.item.ElytraItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResult;
@@ -20,14 +17,10 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.fml.InterModComms;
-import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import top.theillusivec4.caelus.api.CaelusAPI;
 import top.theillusivec4.caelus.api.event.RenderElytraEvent;
 
 import javax.annotation.Nullable;
-import javax.naming.CompoundName;
 import java.util.List;
 import java.util.UUID;
 
@@ -47,15 +40,12 @@ public class PrincipicChestplateItem extends AbstractPrincipicArmor implements I
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-
-
+        if(isElytra(stack))
+            tooltip.add((new TranslationTextComponent("tooltip.tdfmod.principic_chestplate.effect_enabled")));
+        else
+            tooltip.add((new TranslationTextComponent("tooltip.tdfmod.principic_chestplate.effect_disabled")));
         super.addInformation(stack, worldIn, tooltip, flagIn);
         tooltip.add(Util.loreStyle("lore.tdfmod.principic_chestplate"));
-
-        if(isElytra(stack))
-            tooltip.add((new TranslationTextComponent("tooltip.tdfmod.principic_chestplate.elytra_enabled")));
-        else
-            tooltip.add((new TranslationTextComponent("tooltip.tdfmod.principic_chestplate.elytra_disabled")));
 
     }
 
