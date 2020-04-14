@@ -4,3 +4,6 @@
  - Add missing bonus effects to armor
  - Add hearthstone cooldown and effects
  - Add transport rod effects
+
+ Draz:
+ - Make IClickable work for creative inventory.
