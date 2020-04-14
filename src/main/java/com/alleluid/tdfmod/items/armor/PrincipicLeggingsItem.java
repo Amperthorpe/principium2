@@ -27,7 +27,11 @@ public class PrincipicLeggingsItem extends AbstractPrincipicArmor {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(Util.tooltipStyle("tooltip.tdfmod.principic_leggings.effect_disabled"));
+        if(isEnabled(stack))
+            tooltip.add(Util.tooltipStyle("tooltip.tdfmod.principic_leggings.effect_enabled"));
+        else
+            tooltip.add(Util.tooltipStyle("tooltip.tdfmod.principic_leggings.effect_disabled"));
+
         tooltip.add(Util.tooltipStyle("tooltip.tdfmod.principic_leggings"));
         super.addInformation(stack, worldIn, tooltip, flagIn);
         tooltip.add(Util.loreStyle("lore.tdfmod.principic_leggings"));
@@ -53,7 +57,7 @@ public class PrincipicLeggingsItem extends AbstractPrincipicArmor {
         IAttributeInstance attributeInstance = playerEntity.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED);
         attributeInstance.removeModifier(SPEED_MODIFIER);
 
-        if (equipment.getItem() instanceof PrincipicLeggingsItem)
+        if (equipment.getItem() instanceof PrincipicLeggingsItem && ((PrincipicLeggingsItem) equipment.getItem()).isEnabled(equipment))
         {
             attributeInstance.applyModifier(SPEED_MODIFIER);
         }

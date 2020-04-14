@@ -2,7 +2,9 @@ package com.alleluid.tdfmod.items.armor;
 
 import com.alleluid.tdfmod.Util;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
@@ -23,4 +25,5 @@ public class PrincipicBootsItem extends AbstractPrincipicArmor {
         super.addInformation(stack, worldIn, tooltip, flagIn);
         tooltip.add(Util.loreStyle("lore.tdfmod.principic_boots"));
     }
+
 }

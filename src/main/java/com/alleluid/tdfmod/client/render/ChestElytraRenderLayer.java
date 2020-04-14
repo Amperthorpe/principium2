@@ -41,7 +41,7 @@ public class ChestElytraRenderLayer<T extends LivingEntity, M extends EntityMode
             Boolean renderElytra = false;
             Boolean renderElytraGlowing = false;
 
-            if (itemstack.getItem() instanceof PrincipicChestplateItem && PrincipicChestplateItem.isElytra(itemstack))
+            if (itemstack.getItem() instanceof PrincipicChestplateItem && PrincipicChestplateItem.isEnabled(itemstack))
             {
                 renderElytra = true;
                 if(itemstack.isEnchanted())

@@ -2,6 +2,7 @@ package com.alleluid.tdfmod;
 
 import com.alleluid.tdfmod.client.render.ChestElytraRenderLayer;
 import com.alleluid.tdfmod.items.armor.PrincipicChestplateItem;
+import com.alleluid.tdfmod.items.armor.PrincipicHelmetItem;
 import com.alleluid.tdfmod.items.armor.PrincipicLeggingsItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
@@ -20,6 +21,7 @@ public class EventHandlerCommon {
     {
         PrincipicChestplateItem.onLivingEquipmentChange(evt);
         PrincipicLeggingsItem.onLivingEquipmentChange(evt);
+        PrincipicHelmetItem.onLivingEquipmentChange(evt);
     }
 
     @SubscribeEvent void onRenderElytraEvent(RenderElytraEvent evt)

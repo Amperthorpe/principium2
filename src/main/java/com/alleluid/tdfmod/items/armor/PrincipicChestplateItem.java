@@ -41,7 +41,7 @@ public class PrincipicChestplateItem extends AbstractPrincipicArmor implements I
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        if(isElytra(stack))
+        if(isEnabled(stack))
             tooltip.add(Util.tooltipStyle("tooltip.tdfmod.principic_chestplate.effect_enabled"));
         else
             tooltip.add(Util.tooltipStyle("tooltip.tdfmod.principic_chestplate.effect_disabled"));
@@ -50,36 +50,7 @@ public class PrincipicChestplateItem extends AbstractPrincipicArmor implements I
 
     }
 
-    private static void checkNBT(ItemStack stack) {
-        CompoundNBT nbt = stack.getTag();
-        if(nbt==null)
-            nbt = new CompoundNBT();
-        if(!nbt.contains("ElytraMode"))
-            nbt.putBoolean("ElytraMode",true);
-        stack.setTag(nbt);
-    }
 
-    public static boolean isElytra(ItemStack stack){
-        checkNBT(stack);
-        return stack.getTag().getBoolean("ElytraMode");
-    }
-
-    private static void setElytra(ItemStack stack, Boolean mode){
-        checkNBT(stack);
-        CompoundNBT nbt = stack.getTag();
-        nbt.putBoolean("ElytraMode",mode);
-        stack.setTag(nbt);
-    }
-
-    @Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
-        if (playerIn.isSneaking()) {
-            ItemStack chest = playerIn.getHeldItem(handIn);
-            setElytra(chest, !isElytra(chest));
-            return new ActionResult<>(ActionResultType.SUCCESS, chest);
-        }
-        return super.onItemRightClick(worldIn, playerIn, handIn);
-    }
 
     public static void onLivingEquipmentChange(LivingEquipmentChangeEvent evt)
     {
@@ -96,17 +67,9 @@ public class PrincipicChestplateItem extends AbstractPrincipicArmor implements I
         IAttributeInstance attributeInstance = playerEntity.getAttribute(CaelusAPI.ELYTRA_FLIGHT);
         attributeInstance.removeModifier(FLIGHT_MODIFIER);
 
-        if (equipment.getItem() instanceof PrincipicChestplateItem && isElytra(equipment)) {
+        if (equipment.getItem() instanceof PrincipicChestplateItem && isEnabled(equipment)) {
             attributeInstance.applyModifier(FLIGHT_MODIFIER);
         }
     }
 
-
-
-    @Override
-    public boolean onClick(PlayerEntity player, ItemStack itemStack, Container container, int slot) {
-
-        setElytra(itemStack, !isElytra(itemStack));
-        return true;
-    }
 }

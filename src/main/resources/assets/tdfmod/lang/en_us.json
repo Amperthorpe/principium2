@@ -10,8 +10,8 @@
   "item.tdfmod.principic_helmet": "Principic Circlet",
   "lore.tdfmod.principic_helmet": "The Ultimate Helmet",
   "tooltip.tdfmod.principic_helmet": "Provides water breathing.",
-  "tooltip.tdfmod.principic_helmet.effect_enabled": "Right click to toggle [TBD]: Active",
-  "tooltip.tdfmod.principic_helmet.effect_disabled": "Right click to toggle [TBD]: Inactive",
+  "tooltip.tdfmod.principic_helmet.effect_enabled": "Right click to toggle Night Vision: Active",
+  "tooltip.tdfmod.principic_helmet.effect_disabled": "Right click to toggle Night Vision: Inactive",
 
 
   "item.tdfmod.principic_chestplate": "Principic Shoulder Pads",

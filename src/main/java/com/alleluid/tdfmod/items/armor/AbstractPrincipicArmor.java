@@ -1,16 +1,19 @@
 package com.alleluid.tdfmod.items.armor;
 
+import com.alleluid.tdfmod.items.IClickable;
 import com.alleluid.tdfmod.setup.ModSetup;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.*;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -20,7 +23,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public abstract class AbstractPrincipicArmor extends ArmorItem {
+public abstract class AbstractPrincipicArmor extends ArmorItem implements IClickable {
 
     private static final IArmorMaterial principic =
             new IArmorMaterial() {
@@ -101,5 +104,43 @@ public abstract class AbstractPrincipicArmor extends ArmorItem {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
         tooltip.add(new TranslationTextComponent("tooltip.tdfmod.principic_armor"));
+    }
+
+    public static void checkNBT(ItemStack stack) {
+        CompoundNBT nbt = stack.getTag();
+        if(nbt==null)
+            nbt = new CompoundNBT();
+        if(!nbt.contains("Enabled"))
+            nbt.putBoolean("Enabled",true);
+        stack.setTag(nbt);
+    }
+
+    public static boolean isEnabled(ItemStack stack){
+        checkNBT(stack);
+        return stack.getTag().getBoolean("Enabled");
+    }
+
+    public static void setEnabled(ItemStack stack, Boolean mode){
+        checkNBT(stack);
+        CompoundNBT nbt = stack.getTag();
+        nbt.putBoolean("Enabled",mode);
+        stack.setTag(nbt);
+    }
+
+    @Override
+    public boolean onClick(PlayerEntity player, ItemStack itemStack, Container container, int slot) {
+        setEnabled(itemStack, !isEnabled(itemStack));
+        return true;
+    }
+
+
+    @Override
+    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
+        if (playerIn.isSneaking()) {
+            ItemStack armorItem = playerIn.getHeldItem(handIn);
+            setEnabled(armorItem, !isEnabled(armorItem));
+            return new ActionResult<>(ActionResultType.SUCCESS, armorItem);
+        }
+        return super.onItemRightClick(worldIn, playerIn, handIn);
     }
 }
