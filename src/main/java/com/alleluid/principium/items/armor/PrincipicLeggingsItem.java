@@ -1,6 +1,7 @@
 package com.alleluid.principium.items.armor;
 
 import com.alleluid.principium.Util;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -10,7 +11,9 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.client.event.FOVUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -20,6 +23,8 @@ import java.util.jar.Attributes;
 import static com.alleluid.principium.PrincipiumMod.MODID;
 
 public class PrincipicLeggingsItem extends AbstractPrincipicArmor {
+
+    private static final float LEGGINGS_FOV_MODIFIER = 1.15f;
 
     public PrincipicLeggingsItem() {
         super(EquipmentSlotType.LEGS);
@@ -62,5 +67,21 @@ public class PrincipicLeggingsItem extends AbstractPrincipicArmor {
             attributeInstance.applyModifier(SPEED_MODIFIER);
         }
 
+    }
+
+    @SubscribeEvent
+    public static void onFovChange(FOVUpdateEvent evt)
+    {
+        for (ItemStack equip : Minecraft.getInstance().player.getEquipmentAndArmor())
+        {
+            if(equip.getItem() instanceof PrincipicLeggingsItem)
+            {
+                if (isEnabled(equip)) {
+                    evt.setNewfov(LEGGINGS_FOV_MODIFIER);
+                } else {
+                    evt.setNewfov(Math.min(evt.getFov(), LEGGINGS_FOV_MODIFIER));
+                }
+            }
+        }
     }
 }
