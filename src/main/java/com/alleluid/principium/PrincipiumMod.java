@@ -3,6 +3,7 @@ package com.alleluid.principium;
 import com.alleluid.principium.client.render.ChestElytraRenderLayer;
 import com.alleluid.principium.client.event.EventHandlerClient;
 import com.alleluid.principium.network.ClickableHandler;
+import com.alleluid.principium.network.NetworkSync;
 import com.alleluid.principium.setup.*;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
@@ -53,6 +54,7 @@ public class PrincipiumMod
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new EventHandlerClient());
+        NetworkSync.registerPackets();
         ClickableHandler.registerPackets();
 
         Registration.init();
@@ -64,8 +66,6 @@ public class PrincipiumMod
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
         MinecraftForge.EVENT_BUS.register(new EventHandlerCommon());
-
-
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

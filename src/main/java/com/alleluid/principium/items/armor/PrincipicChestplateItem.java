@@ -45,8 +45,6 @@ public class PrincipicChestplateItem extends AbstractPrincipicArmor implements I
 
     }
 
-
-
     public static void onLivingEquipmentChange(LivingEquipmentChangeEvent evt)
     {
 

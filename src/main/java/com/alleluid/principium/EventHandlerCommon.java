@@ -1,6 +1,7 @@
 package com.alleluid.principium;
 
 import com.alleluid.principium.client.render.ChestElytraRenderLayer;
+import com.alleluid.principium.items.armor.PrincipicBootsItem;
 import com.alleluid.principium.items.armor.PrincipicChestplateItem;
 import com.alleluid.principium.items.armor.PrincipicHelmetItem;
 import com.alleluid.principium.items.armor.PrincipicLeggingsItem;
@@ -22,6 +23,7 @@ public class EventHandlerCommon {
         PrincipicChestplateItem.onLivingEquipmentChange(evt);
         PrincipicLeggingsItem.onLivingEquipmentChange(evt);
         PrincipicHelmetItem.onLivingEquipmentChange(evt);
+        PrincipicBootsItem.onLivingEquipmentChange(evt);
     }
 
     @SubscribeEvent void onRenderElytraEvent(RenderElytraEvent evt)
