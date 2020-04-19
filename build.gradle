@@ -13,8 +13,8 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'maven-publish'
 
 version = '1.0'
-group = 'com.alleluid.tdfmod' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'tdfmod'
+group = 'com.alleluid.principium' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'principium'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
@@ -124,7 +124,7 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "tdfmod",
+            "Specification-Title": "principium",
             "Specification-Vendor": "teamdumpsterfire",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,

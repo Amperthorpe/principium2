@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tdfmod:principic_block"
+          "name": "principium:principic_block"
         }
       ],
       "conditions": [

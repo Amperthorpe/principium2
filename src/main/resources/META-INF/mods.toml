@@ -12,17 +12,17 @@ issueTrackerURL="http://my.issue.tracker/" #optional
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
 # The modid of the mod
-modId="tdfmod" #mandatory
+modId="principium" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 version="${file.jarVersion}" #mandatory
  # A display name for the mod
-displayName="tdfmod" #mandatory
+displayName="principium" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
 updateJSONURL="http://myurl.me/" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
 displayURL="http://example.com/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
-logoFile="tdfmod.png" #optional
+logoFile="principium.png" #optional
 # A text field displayed in the mod UI
 authors="Alleluid, Draz, Brochacho" #optional
 # The description text for the mod (multi line!) (#mandatory)
