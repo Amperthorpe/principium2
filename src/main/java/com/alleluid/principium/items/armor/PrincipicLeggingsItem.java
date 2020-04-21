@@ -14,6 +14,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.event.FOVUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -22,6 +23,7 @@ import java.util.jar.Attributes;
 
 import static com.alleluid.principium.PrincipiumMod.MODID;
 
+@Mod.EventBusSubscriber
 public class PrincipicLeggingsItem extends AbstractPrincipicArmor {
 
     private static final float LEGGINGS_FOV_MODIFIER = 1.15f;
@@ -79,7 +81,7 @@ public class PrincipicLeggingsItem extends AbstractPrincipicArmor {
                 if (isEnabled(equip)) {
                     evt.setNewfov(LEGGINGS_FOV_MODIFIER);
                 } else {
-                    evt.setNewfov(Math.min(evt.getFov(), LEGGINGS_FOV_MODIFIER));
+                    evt.setNewfov(Math.min(evt.getNewfov(), LEGGINGS_FOV_MODIFIER));
                 }
             }
         }

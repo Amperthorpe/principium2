@@ -26,7 +26,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.function.Supplier;
 
-@Mod.EventBusSubscriber
+
 public class PrincipicBootsItem extends AbstractPrincipicArmor {
 
     private static final float STEP_ASSIST_HEIGHT  = 1.0f;
