@@ -8,6 +8,7 @@ import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.BowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
@@ -58,6 +59,7 @@ public class PrincipicLeggingsItem extends AbstractPrincipicArmor {
         if (evt.getSlot() != EquipmentSlotType.LEGS) {
             return;
         }
+
 
         PlayerEntity playerEntity = (PlayerEntity) evt.getEntity();
         ItemStack equipment = evt.getTo();

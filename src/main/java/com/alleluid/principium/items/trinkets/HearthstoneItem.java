@@ -1,13 +1,11 @@
 package com.alleluid.principium.items.trinkets;
 
 import com.alleluid.principium.Util;
+import com.alleluid.principium.capabilities.BasicCurioProvider;
 import com.alleluid.principium.items.IClickable;
 import com.alleluid.principium.setup.ModSetup;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.monster.IMob;
-import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.Item;
@@ -15,12 +13,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.*;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
-import net.minecraft.world.dimension.Dimension;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import top.theillusivec4.curios.api.capability.ICurio;
@@ -56,7 +52,7 @@ public class HearthstoneItem extends Item implements IClickable {
     @Nullable
     @Override
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundNBT nbt) {
-        return new DumpsterRingItem.Provider(new ICurio() {
+        return new BasicCurioProvider(new ICurio() {
 
             @Override
             public void playEquipSound(LivingEntity livingEntity) {

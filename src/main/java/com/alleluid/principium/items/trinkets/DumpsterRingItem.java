@@ -1,6 +1,7 @@
 package com.alleluid.principium.items.trinkets;
 
 import com.alleluid.principium.Util;
+import com.alleluid.principium.capabilities.BasicCurioProvider;
 import com.alleluid.principium.setup.ModSetup;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -10,22 +11,15 @@ import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.Direction;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
-import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.common.util.LazyOptional;
-import top.theillusivec4.curios.api.capability.CuriosCapability;
 import top.theillusivec4.curios.api.capability.ICurio;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.ArrayList;
 import java.util.List;
 
 public class DumpsterRingItem extends Item {
@@ -48,7 +42,7 @@ public class DumpsterRingItem extends Item {
 
     @Override
     public ICapabilityProvider initCapabilities(ItemStack stack, CompoundNBT unused) {
-        return new Provider(new ICurio() {
+        return new BasicCurioProvider(new ICurio() {
 
             @Override
             public void onCurioTick(String identifier, int index, LivingEntity livingEntity) {
@@ -85,24 +79,6 @@ public class DumpsterRingItem extends Item {
                 return true;
             }
         }) {};
-    }
-
-    public static class Provider implements ICapabilityProvider {
-
-        final LazyOptional<ICurio> capability;
-
-        Provider(ICurio curio) {
-
-            this.capability = LazyOptional.of(() -> curio);
-        }
-
-        @SuppressWarnings("ConstantConditions")
-        @Nonnull
-        @Override
-        public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-
-            return CuriosCapability.ITEM.orEmpty(cap, capability);
-        }
     }
 }
 
