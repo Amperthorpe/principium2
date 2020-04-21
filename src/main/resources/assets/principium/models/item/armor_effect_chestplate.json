@@ -2,6 +2,6 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "principium:item/golden_elytra",
-    "layer1": "principium:item/principic_chestplate"
+    "layer1": "principium:item/principic_chestplate_active"
   }
 }

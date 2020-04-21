@@ -5,6 +5,6 @@
   },
   "overrides": [
     { "predicate": { "toggled": 0.0 }, "model": "principium:item/principic_chestplate" },
-    { "predicate": { "toggled": 1.0 }, "model": "principium:item/armor_effect_chest_0" }
+    { "predicate": { "toggled": 1.0 }, "model": "principium:item/armor_effect_chestplate" }
   ]
 }
