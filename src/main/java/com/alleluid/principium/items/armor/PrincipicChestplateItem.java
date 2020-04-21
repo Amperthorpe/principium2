@@ -25,9 +25,6 @@ public class PrincipicChestplateItem extends AbstractPrincipicArmor implements I
 
     public PrincipicChestplateItem() {
         super(EquipmentSlotType.CHEST);
-
-        this.addPropertyOverride(new ResourceLocation("toggled"), (stack, world, livingEntity)
-                -> PrincipicChestplateItem.isEnabled(stack) ? 1.0f : 0.0f);
     }
 
     public static AttributeModifier FLIGHT_MODIFIER = new AttributeModifier(
