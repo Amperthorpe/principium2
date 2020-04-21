@@ -77,6 +77,10 @@ public abstract class AbstractPrincipicArmor extends ArmorItem implements IClick
         );
 
         DispenserBlock.registerDispenseBehavior(this, ArmorItem.DISPENSER_BEHAVIOR);
+
+        this.addPropertyOverride(new ResourceLocation("toggled"), (stack, world, livingEntity)
+                -> AbstractPrincipicArmor.isEnabled(stack) ? 1.0f : 0.0f);
+
     }
 
     @Override

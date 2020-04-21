@@ -2,5 +2,10 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "principium:item/principic_boots"
-  }
+  },
+  "overrides": [
+    { "predicate": { "toggled": 0.0 }, "model": "principium:item/principic_boots" },
+    { "predicate": { "toggled": 1.0 }, "model": "principium:item/armor_effect_boots" }
+  ]
+
 }
