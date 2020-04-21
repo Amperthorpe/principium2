@@ -1,7 +1,10 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "principium:item/golden_elytra",
-    "layer1": "principium:item/principic_chestplate"
-  }
+    "layer0": "principium:item/principic_chestplate"
+  },
+  "overrides": [
+    { "predicate:": { "toggled": 0.0 }, "model": "principium:item/principic_chestplate" },
+    { "predicate:": { "toggled": 1.0 }, "model": "principium:item/armor_effect_chest_0" }
+  ]
 }
