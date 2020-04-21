@@ -11,10 +11,12 @@ import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.potion.*;
+import net.minecraft.potion.Effect;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.RenderPlayerEvent;
@@ -29,9 +31,6 @@ import javax.annotation.Nullable;
 import java.lang.reflect.Field;
 import java.util.Collection;
 import java.util.List;
-import java.util.UUID;
-
-import static com.alleluid.principium.PrincipiumMod.MODID;
 
 @Mod.EventBusSubscriber
 public class PrincipicHelmetItem extends AbstractPrincipicArmor {
@@ -96,6 +95,12 @@ public class PrincipicHelmetItem extends AbstractPrincipicArmor {
                 e.printStackTrace();
             }
         }
+    }
+
+
+    @Override
+    public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
+        player.setAir(0);
     }
 
     public static void onLivingEquipmentChange(LivingEquipmentChangeEvent evt)
