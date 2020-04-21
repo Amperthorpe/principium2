@@ -1,5 +1,8 @@
 {
   "variants": {
-    "": { "model":  "principium:block/dumpster_block"}
+    "facing=north": {"model": "principium:block/dumpster_block"},
+    "facing=south": {"model": "principium:block/dumpster_block", "y": 180},
+    "facing=west": {"model": "principium:block/dumpster_block", "y": 270},
+    "facing=east": {"model": "principium:block/dumpster_block", "y": 90}
   }
 }
